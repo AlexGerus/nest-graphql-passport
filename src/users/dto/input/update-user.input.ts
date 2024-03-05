@@ -15,4 +15,8 @@ export class UpdateUserInput {
   @Field({ nullable: true })
   @IsOptional()
   isSubscribed?: boolean;
+
+  @Field({ nullable: true })
+  @IsOptional()
+  password?: string;
 }

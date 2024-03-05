@@ -13,4 +13,7 @@ export class User {
 
   @Field({ nullable: true })
   public isSubscribed?: boolean;
+
+  @Field({ nullable: true })
+  public password?: string;
 }

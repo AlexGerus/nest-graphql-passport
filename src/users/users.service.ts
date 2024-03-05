@@ -13,12 +13,17 @@ import {
 export class UsersService {
   private users: User[] = [];
 
-  public getAll(getUsersArgs: GetUsersArgs): User[] {
-    return getUsersArgs.ids.map((id) => this.getById({ id }));
+  public getAll(): User[] {
+    return this.users;
+    // return getUsersArgs.ids.map((id) => this.getById({ id }));
   }
 
   public getById(getUserArgs: GetUserArgs): User {
     return this.users.find((u) => u.id === getUserArgs.id);
+  }
+
+  public getByEmail(email: string): User | undefined {
+    return this.users.find((u) => u.email === email);
   }
 
   public create(createUserData: CreateUserInput): User {
